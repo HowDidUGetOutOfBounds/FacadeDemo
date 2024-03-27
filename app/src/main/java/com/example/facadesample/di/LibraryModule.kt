@@ -1,5 +1,7 @@
 package com.example.facadesample.di
 
+import com.example.facadesample.contracts.LibraryContract
+import com.example.facadesample.contracts.OldLogger
 import com.example.facadesample.external_library_simulation.VeryCoolDeprecatedLibrary
 import dagger.Module
 import dagger.Provides
@@ -14,7 +16,7 @@ object LibraryModule {
 
     @Provides
     @Singleton
-    fun provideVeryCoolDeprecatedLibrary(): VeryCoolDeprecatedLibrary { // Tight dependency that you already have in project
-        return VeryCoolDeprecatedLibrary()
+    fun provideVeryCoolDeprecatedLibrary(): LibraryContract { // Now we can pass any object that implements LibraryContact
+        return OldLogger(VeryCoolDeprecatedLibrary())
     }
 }
