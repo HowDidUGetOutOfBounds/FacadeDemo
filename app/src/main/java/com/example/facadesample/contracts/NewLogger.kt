@@ -3,10 +3,6 @@ package com.example.facadesample.contracts
 import android.util.Log
 
 class NewLogger: LibraryContract {
-    override fun writeNonFatalLog(msg: String) {
-        Log.d("Jilia", "Warning: $msg")
-    }
-
     override fun writeFatalLog(msg: String) {
         Log.d("Jilia", "Fatal: $msg")
     }

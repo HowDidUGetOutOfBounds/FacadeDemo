@@ -15,7 +15,7 @@ class AppViewModel @Inject constructor(
     private val logger: LibraryContract,
 ) : ViewModel() {
     fun writeNonFatalLog(msg: String) {
-       logger.writeNonFatalLog(msg)
+       logger.writeWarning(msg)
     }
 
     fun writeFatalLog(msg: String) {
